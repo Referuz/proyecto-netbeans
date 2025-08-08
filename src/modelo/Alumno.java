@@ -7,8 +7,9 @@ package modelo;
  * 
  */
 public class Alumno {
-    private String nombre, edad, carrera, cuatrimestre;
-    private float promedio;
+    private String nombre, carrera, cuatrimestre;
+    private int edad;
+    private double promedio;
 
     public String getNombre() {
         return nombre;
@@ -18,11 +19,11 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
@@ -42,15 +43,15 @@ public class Alumno {
         this.cuatrimestre = cuatrimestre;
     }
 
-    public float getPromedio() {
+    public double getPromedio() {
         return promedio;
     }
 
-    public void setPromedio(float promedio) {
+    public void setPromedio(double promedio) {
         this.promedio = promedio;
     }
 
-    public Alumno(String nombre, String edad, String carrera, String cuatrimestre, float promedio) {
+    public Alumno(String nombre, int edad, String carrera, String cuatrimestre, double promedio) {
         this.nombre = nombre;
         this.edad = edad;
         this.carrera = carrera;
