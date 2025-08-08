@@ -6,6 +6,7 @@ import modelo.Alumno;
 
 public class Menu {
     public static void main(String[] args) {
+        //Vista realizada por Diego
         ControladorAlumno cc=new ControladorAlumno();
         String contestacion=new String();
         Scanner scanner=new Scanner(System.in);
