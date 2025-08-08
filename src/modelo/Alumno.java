@@ -7,8 +7,8 @@ package modelo;
  * 
  */
 public class Alumno {
-    private String nombre, carrera, cuatrimestre;
-    private int edad;
+    private String nombre, carrera;
+    private int edad, cuatrimeste;
     private double promedio;
 
     public String getNombre() {
@@ -35,12 +35,12 @@ public class Alumno {
         this.carrera = carrera;
     }
 
-    public String getCuatrimestre() {
-        return cuatrimestre;
+    public int getCuatrimeste() {
+        return cuatrimeste;
     }
 
-    public void setCuatrimestre(String cuatrimestre) {
-        this.cuatrimestre = cuatrimestre;
+    public void setCuatrimeste(int cuatrimeste) {
+        this.cuatrimeste = cuatrimeste;
     }
 
     public double getPromedio() {
@@ -51,16 +51,21 @@ public class Alumno {
         this.promedio = promedio;
     }
 
-    public Alumno(String nombre, int edad, String carrera, String cuatrimestre, double promedio) {
+    public Alumno(String nombre, int edad, String carrera, int cuatrimestre, double promedio) {
         this.nombre = nombre;
         this.edad = edad;
         this.carrera = carrera;
-        this.cuatrimestre = cuatrimestre;
+        this.cuatrimeste=cuatrimestre;
         this.promedio = promedio;
     }
     
     public Alumno(){
         
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "nombre=" + nombre + ", carrera=" + carrera + ", edad=" + edad + ", cuatrimeste=" + cuatrimeste + ", promedio=" + promedio + '}';
     }
     
 }
