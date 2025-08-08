@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.util.Scanner;
 import modelo.Alumno;
 
 /**
@@ -82,6 +83,38 @@ import modelo.Alumno;
                 }
             }
         return promedio;
+    }
+    public  Alumno[][] llenarAlumos(int n, int m){
+        Alumno[][] alumnos=new Alumno[n][m];
+        for (int i=0; i<n; i++)
+            for (int j=0; j<m; j++){
+                System.out.println("Ingrese el alumno " +(j+1) +" de la fila " + (i+1));
+                alumnos[i][j]=llenarAlumno();
+            }
+        return alumnos;
+    }
+    public  Alumno llenarAlumno(){
+        Scanner scanner=new Scanner(System.in);
+        String nombre, carrera;
+        int edad, cuatrimestre;
+        double promedio;
+        System.out.println("Ingrese el nombre del alumno");
+        nombre=scanner.next();
+        System.out.println("Ingrese la edad del alumno");
+        edad=scanner.nextInt();
+        System.out.println("Ingrese la carrera del alumno");
+        carrera=scanner.next();
+        System.out.println("Ingrese el cuatrimestre del alumno");
+        cuatrimestre=scanner.nextInt();
+        System.out.println("Ingrese el promedio del alumno");
+        promedio=scanner.nextDouble();
+        Alumno alumno=new Alumno(nombre, edad, carrera, cuatrimestre, promedio);
+        return alumno;
+    }
+    public void imprimirFila(int i, Alumno[] alumnos){
+        double promedio=calcularPromedioFila(alumnos);
+        i++;
+        System.out.println("La fila "+ i +" tiene un promedio de " + String.format("%.2f", promedio));
     }
 }
 

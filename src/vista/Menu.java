@@ -18,7 +18,7 @@ public class Menu {
         System.out.println("¿Cuantos alumnos son por fila?");
         tamanoColumna=scanner.nextInt();
         System.out.println("Ingrese los alumnos");
-        Alumno[][] alumnos=llenarAlumos(tamanoFila, tamanoFila);
+        Alumno[][] alumnos=cc.llenarAlumos(tamanoFila, tamanoFila);
         
         do{
             System.out.println("Seleccione la opción que desea realizar:");
@@ -32,7 +32,7 @@ public class Menu {
             switch (opcion){
                 case 1:
                     for (int i=0; i<tamanoColumna; i++)
-                        imprimirFila(i, alumnos[i]);
+                        cc.imprimirFila(i, alumnos[i]);
                     break;
                 case 2:
                     double promedioEdad=cc.calcularPromedioEdad(alumnos);
@@ -57,37 +57,5 @@ public class Menu {
         } while (contestacion.equals("SI"));
         System.out.println("Hasta luego");
     }
-    public static Alumno[][] llenarAlumos(int n, int m){
-        Alumno[][] alumnos=new Alumno[n][m];
-        for (int i=0; i<n; i++)
-            for (int j=0; j<m; j++){
-                System.out.println("Ingrese el alumno " +(j+1) +" de la fila " + (i+1));
-                alumnos[i][j]=llenarAlumno();
-            }
-        return alumnos;
-    }
-    public static Alumno llenarAlumno(){
-        Scanner scanner=new Scanner(System.in);
-        String nombre, carrera;
-        int edad, cuatrimestre;
-        double promedio;
-        System.out.println("Ingrese el nombre del alumno");
-        nombre=scanner.next();
-        System.out.println("Ingrese la edad del alumno");
-        edad=scanner.nextInt();
-        System.out.println("Ingrese la carrera del alumno");
-        carrera=scanner.next();
-        System.out.println("Ingrese el cuatrimestre del alumno");
-        cuatrimestre=scanner.nextInt();
-        System.out.println("Ingrese el promedio del alumno");
-        promedio=scanner.nextDouble();
-        Alumno alumno=new Alumno(nombre, edad, carrera, cuatrimestre, promedio);
-        return alumno;
-    }
-    public static void imprimirFila(int i, Alumno[] alumnos){
-        ControladorAlumno cc=new ControladorAlumno();
-        double promedio=cc.calcularPromedioFila(alumnos);
-        i++;
-        System.out.println("La fila "+ i +" tiene un promedio de " + String.format("%.2f", promedio));
-    }
+    
 }
